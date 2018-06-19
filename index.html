@@ -7,24 +7,28 @@
     <link href="index.css" rel="stylesheet" type="text/css" />
     <link href="animate.css" rel="stylesheet" type="text/css" />
 
-    <script src="vue.js"></script>
+    <script src="vue.min.js"></script>
   </head>
   <body>
     <div id="app">
 
-      <transition name="fade" enter-active-class="animated flipInX" leave-active-class="animated flipOutX"><div id="kana" v-if="kana">{{ kana }}</div></transition>
+      <transition name="fade" enter-active-class="animated jackInTheBox" leave-active-class="animated rollOut"><div id="kana" v-if="kana">{{ kana }}</div></transition>
 
       <br><br>
-      <br>Hirgana <input type="checkbox" name="checkboxHiragana" value="true" v-model="checkboxHiragana">
-      <br>Katakana <input type="checkbox" name="checkboxKatakana" value="true" v-model="checkboxKatakana">
+      <div class="controls">
+        <br>Hirgana <input type="checkbox" name="checkboxHiragana" value="true" v-model="checkboxHiragana">
+        <br>Katakana <input type="checkbox" name="checkboxKatakana" value="true" v-model="checkboxKatakana">
 
-      <br>
-      <input type="range" v-model="interval" min="1000" max="5000" >
-      <p>
-      {{ interval }} ms
-      </p>
+        <br>
+        <input type="range" v-model="interval" min="1000" max="5000" >
+        <p>
+        {{ interval }} ms
+        </p>
+      </div>
+
     </div>
     <script src="kana.js"></script>
     <script src="index.js"></script>
+    <a href="https://twitter.com/largo">by Largo Labs</a>
   </body>
 </html>

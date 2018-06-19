@@ -35,23 +35,20 @@ var app = new Vue({
   data: {
     message: '',
     kana: '',
-    interval: 1000,
+    interval: 1300,
     checkboxHiragana: true,
     checkboxKatakana: false,
     kanaCssClass: '',
   },
   methods: {
     nextKana: function() {
-      var lastItem = this.kana;
-
-      this.kana = "";
-
-      //console.log(monographs);
       var item = monographs[Math.floor(Math.random()*monographs.length)];
-      if(item == lastItem) {
+      if(item == this.kana) {
         this.nextKana();
         return;
       }
+
+      this.kana = "";
 
       var self = this;
       //this.kana = item[1];
@@ -67,16 +64,19 @@ var app = new Vue({
     checkboxHiragana: function() {
       if(this.checkboxHiragana === true) {
         this.checkboxKatakana = false;
+      } else {
+        this.checkboxKatakana = true;
       }
     },
     checkboxKatakana: function() {
       if(this.checkboxKatakana === true) {
         this.checkboxHiragana = false;
+      } else {
+        this.checkboxHiragana = true;
       }
     },
     interval: function() {
       var self = this;
-      console.log("clearInterval");
       clearInterval(self.intervalFunction);
       self.intervalFunction = setInterval(function() {
         self.nextKana();

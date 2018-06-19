@@ -5,6 +5,7 @@
 *   second array value -> determines the wovel (column)
 *   third array value -> determines writing type (roumaji/hiragana/katakana)
 *
+*   Thanks to https://cmikavac.net/2012/09/08/mapping-japanese-kana-characters-hiraganakatakana-for-use-in-programming/
 */
 
 var monographs = [

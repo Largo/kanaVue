@@ -1,0 +1,12 @@
+#kana {
+  font-size: 400px;
+  min-height: 400px;
+  margin: 0 auto;
+  width: calc(100vw / 2);
+
+  color: black;
+}
+
+html {
+  overflow-x: hidden;
+}
